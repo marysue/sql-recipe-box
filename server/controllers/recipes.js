@@ -56,6 +56,7 @@ async function getIngredientsData(id, data) {
   } else {
     try {
       ({ rows } = await pool.query(ingredientsSql, [id]));
+      console.log("Rows retrieved for ingredients:  ", rows.length);
     } catch (e) {
       handleError(e, data, 'ingredientsError', ingredientsSqlFileName);
     }
