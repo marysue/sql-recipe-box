@@ -8,7 +8,7 @@
 -- user.
 
 -- YOUR CODE HERE
-
+SET ROLE recipe_box_app;
 
 
 
@@ -26,7 +26,14 @@
 
 -- YOUR CODE HERE
 
+CREATE TABLE recipes (
+    id SERIAL,
+    title VARCHAR(200) NOT NULL,
+    created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
 
+);
 
 
 
@@ -47,7 +54,15 @@
 -- | recipe_id     | INTEGER     | FK, NOT NULL |
 
 -- YOUR CODE HERE
+CREATE TABLE instructions (
+    id SERIAL,
+    specification TEXT NOT NULL,
+    list_order INTEGER NOT NULL,
+    recipe_id INTEGER NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (recipe_id) REFERENCES recipes(id)
 
+);
 
 
 
