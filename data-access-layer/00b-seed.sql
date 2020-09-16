@@ -46,7 +46,7 @@ CREATE TABLE recipes (
 -- above. That's all the information you need to write the FOREIGN KEY
 -- constraint.
 --
--- | Column Name   | Column Type | Constraints  |
+-- | Column Name   | Column Type | Constnpmraints  |
 -- |---------------|-------------|--------------|
 -- | id            | SERIAL      | PK           |
 -- | specification | TEXT        | NOT NULL     |
