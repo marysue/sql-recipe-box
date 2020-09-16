@@ -79,7 +79,11 @@ CREATE TABLE instructions (
 
 -- YOUR CODE HERE
 
-
+CREATE TABLE units_of_measure (
+    id SERIAL,
+    name VARCHAR(20) NOT NULL,
+    PRIMARY KEY(id)
+);
 
 
 
@@ -101,7 +105,16 @@ CREATE TABLE instructions (
 -- | recipe_id          | INTEGER       | FK, NOT NULL |
 
 -- YOUR CODE HERE
-
+CREATE TABLE ingredients (
+    id SERIAL,
+    amount NUMERIC(5, 2) NOT NULL,
+    unit_of_measure_id INTEGER NOT NULL,
+    food_stuff VARCHAR(500) NOT NULL,
+    recipe_id INTEGER NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (unit_of_measure_id) REFERENCES units_of_measure(id),
+    FOREIGN KEY (recipe_id) REFERENCES recipes(id)
+);
 
 
 
