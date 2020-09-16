@@ -11,3 +11,5 @@
 
 
 -- YOUR CODE HERE
+INSERT INTO ingredients (amount, unit_of_measure_id, food_stuff, recipe_id) VALUES ($1, $2, $3, $4);
+

@@ -19,3 +19,6 @@
 
 
 -- YOUR CODE HERE
+SELECT list_order, specification
+FROM instructions
+WHERE recipe_id = $1;
